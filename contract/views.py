@@ -16,8 +16,8 @@ def contract_add(request):
         # Render add contract form
         return render(request, 'add_contract.html')
 
-def contract_update(request, contract_id):
-    contract = get_object_or_404(Contract, pk=contract_id)
+def contract_update(request, pk):
+    contract = get_object_or_404(Contract, pk=pk)
     if request.method == 'POST':
         # Update form processing logic here
         return HttpResponse('Contract updated successfully!')
@@ -25,7 +25,7 @@ def contract_update(request, contract_id):
         # Render update contract form
         return render(request, 'update_contract.html', {'contract': contract})
 
-def contract_delete(request, contract_id):
-    contract = get_object_or_404(Contract, pk=contract_id)
+def contract_delete(request, pk):
+    contract = get_object_or_404(Contract, pk=pk)
     # Delete contract logic here
     return HttpResponse('Contract deleted successfully!')
