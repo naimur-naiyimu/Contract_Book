@@ -1,31 +1,31 @@
-from .models import Contract
+from .models import Contact
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 from .models import Contact
 from django.shortcuts import render
 
-def contract_list(request):
-    contracts = Contract.objects.all()
-    return render(request, 'contract_list.html', {'contracts': contracts})
+def Contact_list(request):
+    Contacts = Contact.objects.all()
+    return render(request, 'Contact_list.html', {'Contacts': Contacts})
 
-def contract_add(request):
+def Contact_add(request):
     if request.method == 'POST':
         # Add form processing logic here
-        return HttpResponse('Contract added successfully!')
+        return HttpResponse('Contact added successfully!')
     else:
-        # Render add contract form
-        return render(request, 'add_contract.html')
+        # Render add Contact form
+        return render(request, 'add_Contact.html')
 
-def contract_update(request, pk):
-    contract = get_object_or_404(Contract, pk=pk)
+def Contact_edit(request, pk):
+    Contact = get_object_or_404(Contact, pk=pk)
     if request.method == 'POST':
         # Update form processing logic here
-        return HttpResponse('Contract updated successfully!')
+        return HttpResponse('Contact updated successfully!')
     else:
-        # Render update contract form
-        return render(request, 'update_contract.html', {'contract': contract})
+        # Render update Contact form
+        return render(request, 'update_Contact.html', {'Contact': Contact})
 
-def contract_delete(request, pk):
-    contract = get_object_or_404(Contract, pk=pk)
-    # Delete contract logic here
-    return HttpResponse('Contract deleted successfully!')
+def Contact_delete(request, pk):
+    Contact = get_object_or_404(Contact, pk=pk)
+    # Delete Contact logic here
+    return HttpResponse('Contact deleted successfully!')
