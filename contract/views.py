@@ -6,7 +6,7 @@ from django.shortcuts import render
 
 def Contact_list(request):
     Contacts = Contact.objects.all()
-    return render(request, 'Contact_list.html', {'Contacts': Contacts})
+    return render(request, 'contract/contact_list.html', {'Contacts': Contacts})
 
 def Contact_add(request):
     if request.method == 'POST':

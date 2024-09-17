@@ -1,0 +1,9 @@
+<h1>Contact List</h1>
+
+<ul>
+    {% for contact in contacts %}
+    <li>
+        <a href={{ contact.first_name }}</a> - {{ contact.email }} - {{ contact.phone_number }}>
+    </li>
+    {% endfor %}
+</ul>
